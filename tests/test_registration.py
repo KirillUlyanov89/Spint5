@@ -22,7 +22,7 @@ def test_successful_registration():
         driver.find_element(By.CSS_SELECTOR, Locator.REGISTER_BUTTON).click()
 
 
-        time.sleep(2)  # Ожидание для асинхронного процесса
+        time.sleep(2)  # Ожидание
         assert login_button.is_displayed()
     finally:
         driver.quit()
@@ -34,7 +34,7 @@ def test_failed_registration_short_password():
 
         driver.find_element(By.CSS_SELECTOR, Locator.NAME_FIELD).send_keys(test_user_name)
         driver.find_element(By.CSS_SELECTOR, Locator.EMAIL_FIELD).send_keys(test_user_login)
-        driver.find_element(By.CSS_SELECTOR, Locator.PASSWORD_FIELD).send_keys("123")  # Корректный тест на короткий пароль
+        driver.find_element(By.CSS_SELECTOR, Locator.PASSWORD_FIELD).send_keys("555")  # Корректный тест на короткий пароль
 
         driver.find_element(By.CSS_SELECTOR, Locator.REGISTER_BUTTON).click()
 
