@@ -6,7 +6,7 @@ from data import (
     test_user_login,
     test_user_password,
 )
-
+#
 class Locator:
     CONSTRUCTOR_BUTTON = "button[data-test='constructor']"
     BUNS_SECTION = "a[data-test='buns']"
