@@ -7,7 +7,7 @@ class Locator:
     EMAIL_FIELD = "input[name='email']"  # Поле "Email"
     PASSWORD_FIELD = "input[name='password']"  # Поле "Пароль"
     REGISTER_BUTTON = "button[data-test='register']"  # Кнопка "Зарегистрироваться"
-#
+
     # Вход
     LOGIN_BUTTON_MAIN = "button[data-test='login-main']"  # Кнопка "Войти в аккаунт" на главной
     LOGIN_BUTTON_PERSONAL_CABINET = "button[data-test='login-cabinet']"  # Кнопка "Личный кабинет"

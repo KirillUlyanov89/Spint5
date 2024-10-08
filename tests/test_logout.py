@@ -28,4 +28,4 @@ def test_logout_from_personal_cabinet():
         time.sleep(2)
         assert login_form.is_displayed()
     finally:
-        driver.quit() #
+        driver.quit()
