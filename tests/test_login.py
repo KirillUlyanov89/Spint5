@@ -67,4 +67,4 @@ def test_login_via_forgot_password_button():
         driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
         assert "Личный кабинет" in driver.page_source
     finally:
-        driver.quit() #
+        driver.quit()

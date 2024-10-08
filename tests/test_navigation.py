@@ -24,4 +24,4 @@ def test_navigate_to_personal_cabinet():
         driver.find_element(By.CSS_SELECTOR, Locator.PERSONAL_CABINET_BUTTON).click()
         assert "Личный кабинет" in driver.page_source  # Проверка перехода
     finally:
-        driver.quit() #
+        driver.quit()

@@ -26,7 +26,7 @@ def test_successful_registration():
         assert login_button.is_displayed()
     finally:
         driver.quit()
- #
+
 def test_failed_registration_short_password():
     driver = webdriver.Chrome()
     try:
