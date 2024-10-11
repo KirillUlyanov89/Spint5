@@ -1,7 +1,7 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from data import (
+from data1 import (
     main_page_url,
     login_page_url,
     profile_page_url,

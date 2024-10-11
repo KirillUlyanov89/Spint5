@@ -22,4 +22,4 @@ class Locator:
     CONSTRUCTOR_BUTTON = "button[data-test='constructor']"  # Кнопка "Конструктор"
     BUNS_SECTION = "a[data-test='buns']"  # Раздел "Булки"
     SAUCES_SECTION = "a[data-test='sauces']"  # Раздел "Соусы"
-    FILLINGS_SECTION = "a[data-test='fillings']"  # Раздел "Начинки"#
+    FILLINGS_SECTION = "a[data-test='fillings']"  # Раздел "Начинки"
