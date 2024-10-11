@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from locators import Locator
-from data import (
+from data_v2 import (
     register_page_url,
     test_user_name,
     test_user_login,
