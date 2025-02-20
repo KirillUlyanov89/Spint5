@@ -1,8 +1,12 @@
-main_page_url = 'https://stellarburgers.nomoreparties.site/'
-register_page_url = 'https://stellarburgers.nomoreparties.site/register'
-login_page_url = 'https://stellarburgers.nomoreparties.site/login'
-forgot_password_page_url = 'https://stellarburgers.nomoreparties.site/forgot-password'
-profile_page_url = 'https://stellarburgers.nomoreparties.site/account/profile'
+# Базовый URL сервера
+base_url = 'https://stellarburgers.nomoreparties.site'
+
+# Эндпоинты
+main_page_url = f'{base_url}/'
+register_page_url = f'{base_url}/register'
+login_page_url = f'{base_url}/login'
+forgot_password_page_url = f'{base_url}/forgot-password'
+profile_page_url = f'{base_url}/account/profile'
 
 # Данные тестового пользователя
 test_user_name = 'Test Kotiauzer'
