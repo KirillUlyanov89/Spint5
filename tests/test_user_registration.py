@@ -1,22 +1,10 @@
 import pytest
-import chromedriver_autoinstaller
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from src.helpers import generate_name, generate_login, generate_valid_password, generate_invalid_password
 from src.locators import WebsiteLocators
 import src.data as data
 
-# Автоматическая установка ChromeDriver
-chromedriver_autoinstaller.install()
-
-@pytest.fixture
-def driver_chrome():
-    driver = webdriver.Chrome()
-    yield driver
-    driver.quit()
-
-class TestUserRegistration:
+class TestConstructorNavigation:
 
     def fill_registration_form(self, driver, name, email, password):
         wait = WebDriverWait(driver, 60)
