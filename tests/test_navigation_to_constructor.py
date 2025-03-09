@@ -1,23 +1,8 @@
 import pytest
-import chromedriver_autoinstaller
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from src.locators import WebsiteLocators
 import src.data as data
-
-# Автоматическая установка ChromeDriver
-chromedriver_autoinstaller.install()
-
-
-@pytest.fixture
-def driver_chrome():
-    service = Service()
-    driver = webdriver.Chrome(service=service)
-    yield driver
-    driver.quit()
-
 
 class TestConstructorNavigation:
 
