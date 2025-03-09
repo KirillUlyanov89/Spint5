@@ -1,39 +1,26 @@
+import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from src.locators import WebsiteLocators
 import src.data as data
-from selenium import webdriver
-import chromedriver_autoinstaller
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.chrome.options import Options
-
 
 class TestSectionsNavigation:
 
-    def setup_method(self):
-        # Автоматическая установка драйвера
-        chromedriver_autoinstaller.install()
-
-        chrome_options = Options()
-        self.driver = webdriver.Chrome(service=ChromeService(), options=chrome_options)
-
-    def teardown_method(self):
-        self.driver.quit()
-
-    def test_navigation_to_sections_sauces(self):
-        self.driver.get(data.main_page_url)
-        wait = WebDriverWait(self.driver, 60)
+    def test_navigation_to_sections_sauces(self, driver_chrome):
+        driver = driver_chrome
+        driver.get(data.main_page_url)
+        wait = WebDriverWait(driver, 60)
 
         sauces_section_inactive = wait.until(EC.element_to_be_clickable(WebsiteLocators.SAUCES_SECTION_INACTIVE))
         sauces_section_inactive.click()
         sauces_section_active = wait.until(EC.visibility_of_element_located(WebsiteLocators.SAUCES_SECTION_ACTIVE))
         assert 'current' in sauces_section_active.get_attribute('class')
 
-    def test_navigation_to_sections_buns(self):
-        self.driver.get(data.main_page_url)
-        wait = WebDriverWait(self.driver, 60)
+    def test_navigation_to_sections_buns(self, driver_chrome):
+        driver = driver_chrome
+        driver.get(data.main_page_url)
+        wait = WebDriverWait(driver, 60)
 
-        # Переходим на вкладку "Соусы", чтобы сделать вкладку "Булки" неактивной
         sauces_section_inactive = wait.until(EC.element_to_be_clickable(WebsiteLocators.SAUCES_SECTION_INACTIVE))
         sauces_section_inactive.click()
         wait.until(EC.visibility_of_element_located(WebsiteLocators.SAUCES_SECTION_ACTIVE))
@@ -43,9 +30,10 @@ class TestSectionsNavigation:
         buns_section_active = wait.until(EC.visibility_of_element_located(WebsiteLocators.BUNS_SECTION_ACTIVE))
         assert 'current' in buns_section_active.get_attribute('class')
 
-    def test_navigation_to_sections_stuffings(self):
-        self.driver.get(data.main_page_url)
-        wait = WebDriverWait(self.driver, 60)
+    def test_navigation_to_sections_stuffings(self, driver_chrome):
+        driver = driver_chrome
+        driver.get(data.main_page_url)
+        wait = WebDriverWait(driver, 60)
 
         stuffings_section_inactive = wait.until(EC.element_to_be_clickable(WebsiteLocators.STUFFINGS_SECTION_INACTIVE))
         stuffings_section_inactive.click()
