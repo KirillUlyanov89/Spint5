@@ -1,25 +1,62 @@
-class Locator:
-    # Заголовок страницы
-    PAGE_TITLE = "h1.title"  # Заголовок страницы
+from selenium.webdriver.common.by import By
 
-    # Регистрация
-    NAME_FIELD = "input[name='name']"  # Поле "Имя"
-    EMAIL_FIELD = "input[name='email']"  # Поле "Email"
-    PASSWORD_FIELD = "input[name='password']"  # Поле "Пароль"
-    REGISTER_BUTTON = "button[data-test='register']"  # Кнопка "Зарегистрироваться"
+# Локаторы для тестов сайта Stellar Burgers
+class WebsiteLocators:
 
-    # Вход
-    LOGIN_BUTTON_MAIN = "button[data-test='login-main']"  # Кнопка "Войти в аккаунт" на главной
-    LOGIN_BUTTON_PERSONAL_CABINET = "button[data-test='login-cabinet']"  # Кнопка "Личный кабинет"
-    LOGIN_BUTTON_REGISTER = "button[data-test='login-register']"  # Кнопка в форме регистрации
-    LOGIN_BUTTON_RECOVERY = "button[data-test='login-recovery']"  # Кнопка в форме восстановления пароля
+# Локаторы для главной страницы сайта
 
-    # Личный кабинет
-    PERSONAL_CABINET_BUTTON = "button[data-test='personal-cabinet']"  # Кнопка "Личный кабинет"
-    LOGOUT_BUTTON = "button[data-test='logout']"  # Кнопка "Выйти"
+    # Локатор для кнопки "Конструктор" в меню навигации сайта
+    CONSTRUCTOR_BUTTON = (By.XPATH, ".//p[text()='Конструктор']")
+    
+    # Локатор для лого-кнопки в меню навигации сайта
+    SERVICE_LOGO_BUTTON = (By.XPATH, ".//*[contains(@class, 'AppHeader_header__logo')]")
+    
+    # Локатор для кнопки "Личный Кабинет" в меню навигации сайта
+    ACCOUNT_BUTTON = (By.XPATH, ".//p[text()='Личный Кабинет']")
+    
+    # Локатор для заголовка конструктора с текстом "Соберите бургер"
+    CONSTRUCTOR_HEADER = (By.XPATH, ".//*[text()='Соберите бургер']")
+    
+    # Локаторы для неактивных вкладок "Булки", "Соусы" и "Начинки"
+    BUNS_SECTION_INACTIVE = (By.XPATH, ".//span[text()='Булки']")
+    SAUCES_SECTION_INACTIVE = (By.XPATH, ".//span[text()='Соусы']")
+    STUFFINGS_SECTION_INACTIVE = (By.XPATH, ".//span[text()='Начинки']")
+    
+    # Локаторы для активных вкладок "Булки", "Соусы" и "Начинки"
+    BUNS_SECTION_ACTIVE = (By.XPATH, ".//span[text()='Булки']/ancestor::div[contains(@class, 'current')]")
+    SAUCES_SECTION_ACTIVE = (By.XPATH, ".//span[text()='Соусы']/ancestor::div[contains(@class, 'current')]")
+    STUFFINGS_SECTION_ACTIVE = (By.XPATH, ".//span[text()='Начинки']/ancestor::div[contains(@class, 'current')]")
+    
+    # Локатор для кнопки "Войти в аккаунт"
+    LOGIN_INTO_ACCOUNT_BUTTON = (By.XPATH, ".//button[text()='Войти в аккаунт']")
+    
+    # Локатор для кнопки "Оформить заказ"
+    MAKE_ORDER_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
+    
+# Локаторы для страницы регистрации / входа
 
-    # Конструктор
-    CONSTRUCTOR_BUTTON = "button[data-test='constructor']"  # Кнопка "Конструктор"
-    BUNS_SECTION = "a[data-test='buns']"  # Раздел "Булки"
-    SAUCES_SECTION = "a[data-test='sauces']"  # Раздел "Соусы"
-    FILLINGS_SECTION = "a[data-test='fillings']"  # Раздел "Начинки"
+    # Локатор для поля ввода имени в форме регистрации
+    NAME_INPUT_FORM = (By.XPATH, ".//label[text()='Имя']/following-sibling::input")
+    
+    # Локатор для поля ввода эл. почты в форме регистрации/входа
+    EMAIL_INPUT_FORM = (By.XPATH, ".//label[text()='Email']/following-sibling::input")
+    
+    # Локатор для поля ввода пароля в форме регистрации/входа
+    PASSWORD_INPUT_FORM = (By.XPATH, ".//label[text()='Пароль']/following-sibling::input")
+    
+    # Локатор для кнопки "Зарегистрироваться" в форме регистрации
+    REGISTRATION_BUTTON_FORM = (By.XPATH, ".//button[text()='Зарегистрироваться']")
+    
+    # Локатор для кнопки-текста "Войти" в форме регистрации
+    LOGIN_TEXT_LINK = (By.XPATH, ".//a[text()='Войти']")
+    
+    # Локатор для кнопки "Войти" в форме входа
+    LOGIN_BUTTON_FORM = (By.XPATH, ".//button[text()='Войти']")
+    
+    # Локатор для ошибки пароля в форме регистрации
+    PASSWORD_ERROR_MESSAGE = (By.XPATH, ".//p[text()='Некорректный пароль']")
+    
+# Локаторы для страницы личного кабинета
+
+    # Локатор для кнопки "Выход"
+    LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")  
