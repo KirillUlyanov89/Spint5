@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from src.locators import WebsiteLocators
 import src.data as data
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+import chromedriver_autoinstaller
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
 
@@ -11,9 +11,11 @@ from selenium.webdriver.chrome.options import Options
 class TestSectionsNavigation:
 
     def setup_method(self):
+        # Автоматическая установка драйвера
+        chromedriver_autoinstaller.install()
 
         chrome_options = Options()
-        self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+        self.driver = webdriver.Chrome(service=ChromeService(), options=chrome_options)
 
     def teardown_method(self):
         self.driver.quit()
